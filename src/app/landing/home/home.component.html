@@ -1,0 +1,324 @@
+<main>
+  <section class="background-gradient">
+    <div class="container-md">
+      <div>
+        <h3>Interpolation</h3>
+        <!-- <p>O número de cliques é: {{ contadorClique }}</p> -->
+        <p
+          [ngClass]="{
+            'text-primary': contadorClique >= 0,
+            'text-success': contadorClique >= 3,
+            'text-warning': contadorClique >= 5,
+            'text-danger': contadorClique >= 9
+          }"
+        >
+          O número de cliques é: {{ contadorClique }}
+        </p>
+
+        <h3>Properties Binding</h3>
+        <button class="btn btn-info" [disabled]="contadorClique >= 10">
+          Info
+        </button>
+        <img class="col-1" [src]="urlImage" alt="" />
+        <h3>Event Binding</h3>
+        <button class="btn btn-warning" (click)="addClique()">Clique-me</button>
+        <button
+          class="btn btn-danger"
+          [disabled]="contadorClique < 10"
+          (click)="zerarContador()"
+        >
+          zerar contador
+        </button>
+
+        <h3>Two-away Binding</h3>
+        <!-- <input
+          type="text"
+          [ngModel]="nome"
+          (ngModelChange)="nome = $event"
+          placeholder="Digite seu nome"
+        />
+        <label>Seu nome é: {{ nome }}</label> -->
+
+        <input type="text" [(ngModel)]="nome" placeholder="Digite seu nome" />
+        <label class="{{ nome }}">Seu nome é: {{ nome }}</label>
+        ou
+        <label [ngClass]="nome">Seu nome é: {{ nome }}</label>
+      </div>
+
+      <div
+        class="row row-cols-1 row-cols-md-2 align-items-center justify-content-center pt-5"
+      >
+        <article class="order-2 order-md-1 pt-5 pt-sm-0">
+          <header class="row">
+            <h1
+              class="text-secondary fs-1 fw-bold text-center text-md-start order-2"
+            >
+              Olá, eu sou o <br />Keidson Roby
+            </h1>
+            <p
+              class="text-primary text-uppercase fw-bold d-flex justify-content-center justify-content-md-start order-1"
+            >
+              seja bem vindo!
+            </p>
+          </header>
+          <p class="font-monospace text-center text-md-start mb-4 mb-lg-4">
+            Desenvolvedor Front-End Angular 12 & UI Designer
+          </p>
+          <div class="text-center text-md-start">
+            <a
+              class="btn btn-primary text-white border-2 px-3 py-2 btn-one"
+              href="https://www.linkedin.com/in/keidsonroby/"
+              target="_blank"
+              rel="noopener"
+              >Acessar o Linkedin</a
+            >
+            <a
+              class="btn btn-outline-secondary border-2 px-3 py-2"
+              href="https://api.whatsapp.com/send?phone=5592994571858"
+              target="_blank"
+              rel="noreferrer"
+              >Entrar em contato</a
+            >
+          </div>
+        </article>
+        <img
+          class="order-1 order-md-2 d-flex justify-content-center align-self-end m-0 p-0 figure-hero"
+          src="../../../assets/img/hero-img.png"
+          alt="foto de keidson roby"
+        />
+      </div>
+    </div>
+  </section>
+  <section class="mx-3 my-5" id="projetos">
+    <article class="container-md">
+      <div
+        class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-3 g-4 py-5"
+      >
+        <div class="col">
+          <div class="p-3 border border-primary rounded">
+            <div class="pb-4 col">
+              <i class="bi bi-bookmark-check fs-3 text-primary"></i>
+            </div>
+            <h3 class="fs-4 fw-bold text-secondary">Logo 1</h3>
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-3 border border-primary rounded">
+            <div class="pb-4 col">
+              <i class="bi bi-bookmark-check fs-3 text-primary"></i>
+            </div>
+            <h3 class="fs-4 fw-bold text-secondary">Logo 2</h3>
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-3 border border-primary rounded">
+            <div class="pb-4 col">
+              <i class="bi bi-bookmark-check fs-3 text-primary"></i>
+            </div>
+            <h3 class="fs-4 fw-bold text-secondary">Logo 3</h3>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+  <section class="py-1 my-5" id="sobre">
+    <article class="container-md">
+      <div class="row row-cols-1 g-4 py-5 justify-content-center">
+        <div class="col-12 col-sm-10 text-center">
+          <h2 class="fs-3 fw-bold text-secondary">
+            Lorem ipsum dolor sit amet
+          </h2>
+          <p class="font-monospace">Nosso objetivo é trazer resultados.</p>
+        </div>
+      </div>
+    </article>
+    <article class="container-md">
+      <div
+        class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-4 py-5 justify-content-center"
+      >
+        <div class="col">
+          <a
+            class="d-flex justify-content-center mb-4"
+            href="https://github.com/keidsondesigner"
+            title="icon github"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              class="icon-partners"
+              src="./assets/img/icon-one.svg"
+              alt="logo parceiros"
+            />
+          </a>
+          <h2 class="fs-4 fw-bolder text-secondary text-center">
+            Lorem ipsum dolor sit
+          </h2>
+          <p class="text-center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor.
+          </p>
+        </div>
+        <div class="col">
+          <a
+            class="d-flex justify-content-center mb-4"
+            href="https://www.linkedin.com/in/keidsonroby/"
+            title="icon linkedin"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              class="icon-partners"
+              src="./assets/img/icon-one.svg"
+              alt="logo parceiros"
+            />
+          </a>
+          <h2 class="fs-4 fw-bolder text-secondary text-center">
+            Lorem ipsum dolor sit
+          </h2>
+          <p class="text-center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor.
+          </p>
+        </div>
+        <div class="col">
+          <a
+            class="d-flex justify-content-center mb-4"
+            href="https://www.instagram.com/keidsonroby/"
+            title="icon instagram"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              class="icon-partners"
+              src="./assets/img/icon-one.svg"
+              alt="logo parceiros"
+            />
+          </a>
+          <h2 class="fs-4 fw-bolder text-secondary text-center">
+            Lorem ipsum dolor sit
+          </h2>
+          <p class="text-center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor.
+          </p>
+        </div>
+        <div class="col">
+          <a
+            class="d-flex justify-content-center mb-4"
+            href="https://www.youtube.com/channel/UC-lemWp6LFgffpUs1oytywg"
+            title="icon youtube"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              class="icon-partners"
+              src="./assets/img/icon-one.svg"
+              alt="logo parceiros"
+            />
+          </a>
+          <h2 class="fs-4 fw-bolder text-secondary text-center">
+            Lorem ipsum dolor sit
+          </h2>
+          <p class="text-center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor.
+          </p>
+        </div>
+      </div>
+    </article>
+  </section>
+  <hr class="m-0" />
+  <section class="mx-3 my-5" id="habilidades">
+    <article class="container-md">
+      <h2 class="fs-3 fw-bold text-center text-primary">Habilidades</h2>
+      <div
+        class="row row-cols-2 row-cols-sm-3 row-cols-md-3 row-cols-lg-6 g-4 py-5 justify-content-center"
+      >
+        <div class="col">
+          <a
+            class="d-flex justify-content-center border bg-dark border-secondary p-4 rounded"
+            href="https://developer.mozilla.org/pt-BR/docs/Web/HTML"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              class="icon-skills"
+              src="../../../assets/img/icon-html5.svg"
+              alt="logo html5"
+            />
+          </a>
+        </div>
+        <div class="col">
+          <a
+            class="d-flex justify-content-center border bg-dark border-secondary p-4 rounded"
+            href="https://developer.mozilla.org/pt-BR/docs/Web/CSS"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              class="icon-skills"
+              src="../../../assets/img/icon-css.svg"
+              alt="logo css"
+            />
+          </a>
+        </div>
+        <div class="col">
+          <a
+            class="d-flex justify-content-center border bg-dark border-secondary p-4 rounded"
+            href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              class="icon-skills"
+              src="../../../assets/img/icon-javascript.svg"
+              alt="logo javascript"
+            />
+          </a>
+        </div>
+        <div class="col">
+          <a
+            class="d-flex justify-content-center border bg-dark border-secondary p-4 rounded"
+            href="https://angular.io/guide/what-is-angular"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              class="icon-skills"
+              src="../../../assets/img/icon-angular.svg"
+              alt="logo angular"
+            />
+          </a>
+        </div>
+        <div class="col">
+          <a
+            class="d-flex justify-content-center border bg-dark border-secondary p-4 rounded"
+            href="https://getbootstrap.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              class="icon-skills"
+              src="../../../assets/img/icon-boostrap.svg"
+              alt="logo bootsrap"
+            />
+          </a>
+        </div>
+        <div class="col">
+          <a
+            class="d-flex justify-content-center border bg-dark border-secondary p-4 rounded"
+            href="https://tailwindcss.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              class="icon-skills"
+              src="../../../assets/img/icon-tw.svg"
+              alt="logo tailwind css"
+            />
+          </a>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>
