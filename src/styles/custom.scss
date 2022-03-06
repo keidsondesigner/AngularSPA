@@ -1,8 +1,69 @@
+@import "./_variables.scss";
+
 html {
   scroll-behavior: smooth;
+
+  /* Config scrollbar firefox  */
+  scrollbar-color: $orange $teal;
+  scrollbar-width: thin;
+}
+
+html::-webkit-scrollbar {
+  width: 6px;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: $teal;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: $orange;
+  border-radius: 6px;
 }
 
 body {
-  overflow-x: hidden;
   font-family: $font-family-sans-serif;
+}
+
+.background-gradient {
+  background: linear-gradient(
+    180deg,
+    #f5f7ff 52.08%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+// .navbar .navbar-nav .nav-link:hover {
+//   color: $green !important;
+// }
+
+.icon-skills {
+  width: 4rem;
+  height: 4rem;
+}
+
+.icon-partners {
+  width: 8rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .icon-skills {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .icon-partners {
+    width: 7rem;
+  }
+}
+
+.btn-one {
+  margin-right: 0.5rem !important;
+}
+
+@media only screen and (max-width: 320px) {
+  .btn-one {
+    margin-right: 0 !important;
+    margin-bottom: 1.5rem !important;
+  }
 }
