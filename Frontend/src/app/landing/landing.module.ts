@@ -11,10 +11,11 @@ import { FormsModule } from "@angular/forms";
 @NgModule({
   declarations: [
     LandingComponent,
-    HomeComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
-  imports: [CommonModule, LandingRoutingModule, FormsModule]
+  imports: [CommonModule, LandingRoutingModule, FormsModule],
+  exports: [LandingComponent, NavbarComponent]
 })
 export class LandingModule {}

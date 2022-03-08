@@ -1,0 +1,71 @@
+<app-navbar></app-navbar>
+<section class="bg-warning">
+  <figure class="d-flex justify-content-center m-0">
+    <img class="w-auto" src="./assets/img/banner_img.jpg" alt="" />
+  </figure>
+</section>
+<section class="bg-primary">
+  <ul class="nav navbar-light justify-content-around container-md">
+    <li class="nav-item">
+      <a class="fw-bold nav-link text-uppercase text-white" href="#"
+        >Lançamentos</a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="fw-bold nav-link text-uppercase text-white" href="#"
+        >Destaques</a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="fw-bold nav-link text-uppercase text-white" href="#"
+        >PC gamer</a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="fw-bold nav-link text-uppercase text-white" href="#"
+        >Eletrônicos</a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="fw-bold nav-link text-uppercase text-white" href="#"
+        >Seja Premium</a
+      >
+    </li>
+  </ul>
+</section>
+<section class="container-md py-5">
+  <h1 class="fw-bold text-center text-primary">O melhor mix em tecnologia.</h1>
+  <article
+    class="gx-4 gy-1 py-5 row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-xl-5"
+  >
+    <div *ngFor="let produto of produtos" class="col">
+      <figure class="card col p-3">
+        <img
+          src="{{ produto.image }}"
+          class="card-img-top style-card-img"
+          title="Headset Gamer Havit, Drivers 53mm - HV-H2002D"
+          alt="Headset Gamer Havit, Drivers 53mm - HV-H2002D"
+        />
+        <div class="pt-4">
+          <h6
+            class="card-title font-monospace fw-bold text-secondary style-card-title"
+          >
+            {{ produto.nome }}
+          </h6>
+          <div class="d-flex flex-column pb-2">
+            <span class="text-muted text-decoration-line-through"
+              >R$&nbsp;2.894,63</span
+            >
+            <span class="font-monospace fs-3 fw-bolder text-primary">
+              {{ produto.valor | currency: "BRL":"symbol":"1.2-2":"pt" }}
+            </span>
+            <span class="text-muted">À vista no PIX</span>
+          </div>
+          <button class="btn btn-primary text-white w-100">
+            <i class="bi bi-cart3 me-2"></i>Comprar
+          </button>
+        </div>
+      </figure>
+    </div>
+  </article>
+</section>

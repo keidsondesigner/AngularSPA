@@ -37,6 +37,21 @@ body {
 //   color: $green !important;
 // }
 
+.style-card-img {
+  height: 8.25rem;
+  width: auto;
+  object-fit: contain;
+}
+.style-card-title {
+  min-height: 3.5977rem;
+  max-height: 3.5977rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
 .icon-skills {
   width: 4rem;
   height: 4rem;
