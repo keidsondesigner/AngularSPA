@@ -3,7 +3,8 @@ export interface IProduto {
   nome: string;
   description: string;
   valor: number;
-  promocao: boolean;
   valorPromo: number;
+  promocao: boolean;
+  estoque: boolean;
   image: string;
 }
