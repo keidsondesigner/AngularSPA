@@ -1,0 +1,55 @@
+<section class="container-md mt-5">
+  <article class="bg-light p-5 rounded-3 border">
+    <h1 class="fs-3 font-monospace fw-bold text-secondary mb-5">
+      {{ produto.nome }}
+    </h1>
+    <div class="row row-cols-1 row-cols-sm-2">
+      <figure class="col d-flex justify-content-center">
+        <img
+          src="{{ produto.image }}"
+          class="img-fluid"
+          alt="{{ produto.nome }}"
+        />
+      </figure>
+      <div class="col">
+        <div class="row row-cols-1">
+          <div class="col">
+            <div class="d-flex flex-column pb-2">
+              <p class="text-black">
+                Entregue por: <span class="fw-bold">KaBuM!</span> |
+                <span class="fw-bold text-success" *ngIf="produto.estoque"
+                  >Em estoque</span
+                >
+                <span class="fw-bold text-danger" *ngIf="!produto.estoque"
+                  >Fora de estoque</span
+                >
+              </p>
+              <span class="text-muted text-decoration-line-through">
+                {{ produto.valor | currency: "BRL":"symbol":"1.2-2":"pt" }}
+              </span>
+              <span class="font-monospace fs-2 fw-bolder text-primary">
+                {{ produto.valorPromo | currency: "BRL":"symbol":"1.2-2":"pt" }}
+              </span>
+              <div [ngSwitch]="produto.promocao">
+                <p *ngSwitchCase="true">
+                  Valor promocional, por tempo limitado!
+                </p>
+                <p *ngSwitchCase="false">Últimas unidades!</p>
+              </div>
+              <span class="text-muted">À vista no PIX</span>
+            </div>
+          </div>
+          <div class="col pt-2">
+            <button
+              [disabled]="!produto.estoque"
+              class="btn btn-primary fs-4 fw-bold text-uppercase text-white w-100 mt-4"
+            >
+              <i class="bi bi-cart3 me-2" title="icone carrinho de compra"></i
+              >Comprar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
