@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpClientModule } from "@angular/common/http";
 
@@ -12,6 +12,9 @@ import { LandingModule } from "./landing/landing.module";
 import { PagesModule } from "./pages/pages.module";
 import { ProdutosService } from "./service/produtos.service";
 
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgxSpinnerModule } from "ngx-spinner";
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -20,7 +23,9 @@ import { ProdutosService } from "./service/produtos.service";
     AppRoutingModule,
     LandingModule,
     PagesModule,
-    LandingModule
+    LandingModule,
+    BrowserAnimationsModule,
+    NgxSpinnerModule
   ],
   providers: [ProdutosService],
   bootstrap: [AppComponent]
