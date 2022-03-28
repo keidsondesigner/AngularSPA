@@ -1,4 +1,5 @@
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { HttpErrorInterceptor } from 'src/app/interceptors/http-error.interceptor';
 import { LoadingInterceptor } from 'src/app/interceptors/loading.interceptor';
 
 import { registerLocaleData } from '@angular/common';
@@ -30,6 +31,7 @@ registerLocaleData(localePt);
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     ProdutosService,
   ],
   bootstrap: [AppComponent],

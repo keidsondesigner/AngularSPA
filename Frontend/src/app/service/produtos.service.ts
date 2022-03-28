@@ -1,4 +1,3 @@
-import { NgxSpinnerService } from 'ngx-spinner';
 import { Observable } from 'rxjs/internal/Observable';
 import { environment } from 'src/environments/environment';
 
@@ -9,10 +8,7 @@ import { IProduto } from '../model/produto.model';
 
 @Injectable()
 export class ProdutosService {
-  constructor(
-    private readonly http: HttpClient,
-    private readonly spinnerService: NgxSpinnerService
-  ) {}
+  constructor(private readonly http: HttpClient) {}
 
   protected baseUrl = environment.host + '/produtos';
 

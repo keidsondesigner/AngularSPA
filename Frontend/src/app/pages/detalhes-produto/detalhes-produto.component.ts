@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
 import { IProduto } from 'src/app/model/produto.model';
 import { ProdutosService } from 'src/app/service/produtos.service';
 
@@ -9,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './detalhes-produto.component.html',
 })
 export class DetalhesProdutoComponent implements OnInit {
-  public produto!: IProduto;
+  public produto$: Observable<IProduto>;
 
   constructor(
     private produtoService: ProdutosService,
@@ -17,13 +19,13 @@ export class DetalhesProdutoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.obterProduto();
+    this.produto$ = this.obterProduto();
   }
 
-  obterProduto() {
-    let id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
-    this.produtoService.obterProdutoId(id).subscribe((produto) => {
-      this.produto = produto;
-    });
+  obterProduto(): Observable<IProduto> {
+    return this.activatedRoute.params.pipe(
+      map((params) => params.id),
+      switchMap((id) => this.produtoService.obterProdutoId(id))
+    );
   }
 }

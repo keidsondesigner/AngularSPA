@@ -1,4 +1,4 @@
-<section *ngIf="produto" class="container-md mt-5">
+<section *ngIf="produto$ | async as produto" class="container-md mt-5">
   <article class="bg-light p-5 rounded-3 border">
     <h1 class="fs-3 font-monospace fw-bold text-secondary mb-5">
       {{ produto.nome }}
