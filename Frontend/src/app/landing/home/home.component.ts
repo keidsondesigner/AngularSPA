@@ -1,15 +1,14 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-  selector: "app-home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.scss"]
+  selector: 'app-home',
+  templateUrl: './home.component.html',
 })
 export class HomeComponent {
   public contadorClique: number = 0;
-  public nome: string = "";
+  public nome: string = '';
   public urlImage: string =
-    "https://angular.io/assets/images/logos/angular/angular.svg";
+    'https://angular.io/assets/images/logos/angular/angular.svg';
 
   addClique() {
     this.contadorClique++;

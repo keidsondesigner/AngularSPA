@@ -1,14 +1,13 @@
-import { ActivatedRoute } from "@angular/router";
-import { Component, OnInit } from "@angular/core";
-import { ProdutosService } from "src/app/service/produtos.service";
-import { IProduto } from "src/app/model/produto.model";
+import { NgxSpinnerService } from 'ngx-spinner';
+import { IProduto } from 'src/app/model/produto.model';
+import { ProdutosService } from 'src/app/service/produtos.service';
 
-import { NgxSpinnerService } from "ngx-spinner";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: "app-detalhes-produto",
-  templateUrl: "./detalhes-produto.component.html",
-  styleUrls: ["./detalhes-produto.component.scss"]
+  selector: 'app-detalhes-produto',
+  templateUrl: './detalhes-produto.component.html',
 })
 export class DetalhesProdutoComponent implements OnInit {
   public produto!: IProduto;
@@ -32,8 +31,8 @@ export class DetalhesProdutoComponent implements OnInit {
   }
 
   obterProduto() {
-    let id = Number(this.activatedRoute.snapshot.paramMap.get("id"));
-    this.produtoService.obterProdutoId(id).subscribe(produto => {
+    let id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+    this.produtoService.obterProdutoId(id).subscribe((produto) => {
       this.produto = produto;
     });
   }
