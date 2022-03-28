@@ -1,4 +1,3 @@
-import { NgxSpinnerService } from 'ngx-spinner';
 import { IProduto } from 'src/app/model/produto.model';
 import { ProdutosService } from 'src/app/service/produtos.service';
 
@@ -14,20 +13,11 @@ export class DetalhesProdutoComponent implements OnInit {
 
   constructor(
     private produtoService: ProdutosService,
-    private activatedRoute: ActivatedRoute,
-    private spinner: NgxSpinnerService
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.obterProduto();
-
-    /** spinner starts on init */
-    this.spinner.show();
-
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 2000);
   }
 
   obterProduto() {
