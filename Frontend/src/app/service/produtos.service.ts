@@ -1,17 +1,19 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { IProduto } from "../model/produto.model";
-import { Observable } from "rxjs/internal/Observable";
-import { environment } from "src/environments/environment";
+import { Observable } from 'rxjs/internal/Observable';
+import { environment } from 'src/environments/environment';
+
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+import { IProduto } from '../model/produto.model';
 
 @Injectable()
 export class ProdutosService {
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
-  protected baseUrl = environment.host + "/produtos";
+  protected baseUrl = environment.host + '/produtos';
 
   obterProdutos(): Observable<IProduto[]> {
-    return this.http.get<IProduto[]>(this.baseUrl);
+    return this.http.get<IProduto[]>(this.baseUrl).pipe();
   }
 
   obterProdutoId(id: number): Observable<IProduto> {

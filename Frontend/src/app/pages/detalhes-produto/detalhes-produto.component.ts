@@ -1,40 +1,31 @@
-import { ActivatedRoute } from "@angular/router";
-import { Component, OnInit } from "@angular/core";
-import { ProdutosService } from "src/app/service/produtos.service";
-import { IProduto } from "src/app/model/produto.model";
+import { Observable } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
+import { IProduto } from 'src/app/model/produto.model';
+import { ProdutosService } from 'src/app/service/produtos.service';
 
-import { NgxSpinnerService } from "ngx-spinner";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: "app-detalhes-produto",
-  templateUrl: "./detalhes-produto.component.html",
-  styleUrls: ["./detalhes-produto.component.scss"]
+  selector: 'app-detalhes-produto',
+  templateUrl: './detalhes-produto.component.html',
 })
 export class DetalhesProdutoComponent implements OnInit {
-  public produto!: IProduto;
+  public produto$: Observable<IProduto>;
 
   constructor(
     private produtoService: ProdutosService,
-    private activatedRoute: ActivatedRoute,
-    private spinner: NgxSpinnerService
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.obterProduto();
-
-    /** spinner starts on init */
-    this.spinner.show();
-
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 2000);
+    this.produto$ = this.obterProduto();
   }
 
-  obterProduto() {
-    let id = Number(this.activatedRoute.snapshot.paramMap.get("id"));
-    this.produtoService.obterProdutoId(id).subscribe(produto => {
-      this.produto = produto;
-    });
+  obterProduto(): Observable<IProduto> {
+    return this.activatedRoute.params.pipe(
+      map((params) => params.id),
+      switchMap((id) => this.produtoService.obterProdutoId(id))
+    );
   }
 }

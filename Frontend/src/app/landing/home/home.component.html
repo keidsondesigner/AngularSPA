@@ -3,7 +3,6 @@
     <div class="container-md">
       <div>
         <h3>Interpolation</h3>
-        <!-- <p>O número de cliques é: {{ contadorClique }}</p> -->
         <p
           [ngClass]="{
             'text-primary': contadorClique >= 0,
@@ -31,13 +30,6 @@
         </button>
 
         <h3>Two-away Binding</h3>
-        <!-- <input
-          type="text"
-          [ngModel]="nome"
-          (ngModelChange)="nome = $event"
-          placeholder="Digite seu nome"
-        />
-        <label>Seu nome é: {{ nome }}</label> -->
 
         <input type="text" [(ngModel)]="nome" placeholder="Digite seu nome" />
         <label class="{{ nome }}">Seu nome é: {{ nome }}</label>

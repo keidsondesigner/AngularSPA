@@ -1,8 +1,11 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
+
 @Component({
-  selector: "app-landing",
-  templateUrl: "./landing.component.html"
+  selector: 'app-landing',
+  template: `
+    <app-navbar></app-navbar>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  `,
 })
-export class LandingComponent {
-  constructor() {}
-}
+export class LandingComponent {}
