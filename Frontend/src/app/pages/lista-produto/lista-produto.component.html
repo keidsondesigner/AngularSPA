@@ -42,7 +42,7 @@
     class="gx-4 gy-1 py-5 row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-xl-5"
   >
     <div *ngFor="let produto of produtos$ | async" class="col">
-      <figure class="card col p-3">
+      <figure class="card col p-3 border rounded bg-light">
         <img
           src="{{ produto.image }}"
           class="card-img-top style-card-img"
