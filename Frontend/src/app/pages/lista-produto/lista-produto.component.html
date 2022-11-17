@@ -65,10 +65,16 @@
           </div>
           <button
             class="btn btn-primary text-white w-100"
-            [routerLink]="['/detalhes-produto', produto.id]"
+            routerLink="/detalhes-produto/{{ produto.id }}"
           >
             <i class="bi bi-cart3 me-2"></i>Ver detalhes
           </button>
+          <!-- <button
+            class="btn btn-primary text-white w-100"
+            (click)="onClick(produto)"
+          >
+            <i class="bi bi-cart3 me-2"></i>Ver detalhes
+          </button> -->
         </div>
       </figure>
     </div>
