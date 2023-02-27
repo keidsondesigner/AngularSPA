@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { LandingModule } from './landing/landing.module';
 import { PagesModule } from './pages/pages.module';
 import { ProdutosService } from './service/produtos.service';
+import { SharedModule } from './shared/shared.module';
 
 registerLocaleData(localePt);
 
@@ -23,6 +24,7 @@ registerLocaleData(localePt);
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    SharedModule,
     LandingModule,
     PagesModule,
     LandingModule,
