@@ -1,0 +1,39 @@
+:host {
+  button {
+    border: 0px;
+    height: 35px;
+    width: 120px;
+    border-radius: 6px;
+  }
+
+  button[typeBnt="solid-primary"] {
+    background: green;
+    border: 0px;
+    color: white; // var(--color-primary);
+    transition: 600ms;
+    &:hover {
+      background: #3f6031;
+    }
+  }
+
+  button[typeBnt="outline-primary"] {
+    background: transparent;
+    border: 1px solid blue; // var(--color-primary);
+    color: blue; // var(--color-primary);
+    transition: 600ms;
+    &:hover {
+      background: #dbe4f6;
+    }
+  }
+
+  button[typeBnt="outline-secondary"] {
+    background: transparent;
+    border: 1px solid red; // var(--color-red);
+    color: red; // var(--color-red);
+    transition: 600ms;
+    &:hover {
+      background: #f6dbdb;
+    }
+  }
+
+}
