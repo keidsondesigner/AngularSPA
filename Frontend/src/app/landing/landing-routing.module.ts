@@ -11,9 +11,9 @@ const ROUTES: Routes = [
     pathMatch: 'full',
   },
   {
-    path: '',
+    path: 'home',
     component: LandingComponent,
-    children: [{ path: 'home', component: HomeComponent }],
+    children: [{ path: '', component: HomeComponent }],
   },
 ];
 

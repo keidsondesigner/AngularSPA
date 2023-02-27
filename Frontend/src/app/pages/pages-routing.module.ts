@@ -8,11 +8,6 @@ import { PagesComponent } from './pages.component';
 const ROUTES: Routes = [
   {
     path: '',
-    redirectTo: 'pages',
-    pathMatch: 'full',
-  },
-  {
-    path: '',
     component: PagesComponent,
     children: [
       { path: 'lista-produtos', component: ListaProdutoComponent },
