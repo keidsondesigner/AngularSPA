@@ -14,7 +14,7 @@ export class ListaProdutoComponent implements OnInit {
   constructor(
     private produtoService: ProdutosService,
     private activatedRoute: ActivatedRoute,
-    //private router: Router,
+    private router: Router
   ) {}
 
   public produtos$: Observable<IProduto[]>;
@@ -25,7 +25,7 @@ export class ListaProdutoComponent implements OnInit {
     this.activatedRoute.snapshot.paramMap.get('id');
   }
 
-  // onClick(produto: any) {
-  //   this.router.navigate(['/detalhes-produto', produto.id])
-  // }
+  onClick(produto: any) {
+    this.router.navigate(['/detalhes-produto', produto.id])
+  }
 }
